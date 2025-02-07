@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { SpeedInsights } from '@vercel/speed-insights/nuxt'
 </script>
 
 <template>
-  <div class="fixed top-0 left-0 w-screen h-screen flex justify-center items-center barlow bg-black text-white doto">
-    <slot />
-    <SpeedInsights />
+  <div class="fixed top-0 left-0 w-screen h-screen flex flex-col barlow bg-black text-white doto">
+    <div class="w-full h-full flex justify-center">
+      <slot />
+    </div>
   </div>
 </template>
 

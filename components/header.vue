@@ -5,7 +5,7 @@
         KoiJs
       </p>
       <p class="text-sm">
-        COMING_SOON...
+        npm_packages
       </p>
     </div>
     <Icon class="text-3xl" name="arcticons:koillection" />
