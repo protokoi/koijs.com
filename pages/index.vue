@@ -21,7 +21,7 @@ definePageMeta({
 
 <template>
   <NuxtLayout>
-    <div class="lg:w-96 md:w-10/12 w-full lg:px-0 md:px-0 px-2 flex flex-col h-full justify-start pb-12 items-start relative">
+    <div class="lg:w-96 md:w-10/12 w-full lg:px-0 md:px-0 relative px-2 flex flex-col h-full justify-start pb-12 items-start">
       <Header />
 
       <div class="flex flex-col gap-4 w-full justify-center h-full">

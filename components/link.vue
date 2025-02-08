@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-  label: string
+  label: string | undefined
   info?: string
   links: {
     live: string
