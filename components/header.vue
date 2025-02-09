@@ -9,7 +9,7 @@
       </p>
     </div>
     <div class="">
-      <Icon class="text-3xl absolute lg:right-0 right-1 top-2" name="arcticons:koillection" />
+      <!-- <Icon class="text-3xl absolute lg:right-0 right-1 top-2" name="arcticons:koillection" /> -->
     </div>
   </div>
 </template>

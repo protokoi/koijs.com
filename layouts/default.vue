@@ -3,7 +3,8 @@
 
 <template>
   <div class="fixed top-0 left-0 w-screen h-screen flex flex-col barlow bg-black text-white doto">
-    <div class="w-full h-full flex justify-center">
+    <koi class="absolute flex justify-center items-center w-screen h-screen -z-20 opacity-25 scale-75" />
+    <div class="w-full h-full flex justify-center font-semibold">
       <slot />
     </div>
   </div>

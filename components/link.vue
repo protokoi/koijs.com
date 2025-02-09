@@ -24,7 +24,7 @@ const isHover = ref<boolean>(false)
     >
       <p
         :class="{
-          'text-red-400': isHover,
+          'text-green-400': isHover,
         }" class="whitespace-nowrap animation-all duration-500 ease-in-out delay-100"
       >
         {{ props.label }}
@@ -40,7 +40,7 @@ const isHover = ref<boolean>(false)
         target="_blank"
         class="flex items-center gap-2"
       >
-        <Icon class="text-4xl opacity-70" name="i-mdi:npm" />
+        <Icon class="text-4xl " name="i-mdi:npm" />
       </a>
 
       <a
@@ -48,7 +48,7 @@ const isHover = ref<boolean>(false)
         target="_blank"
         class="flex items-center gap-2"
       >
-        <Icon class="text-lg opacity-70" name="pixelarticons:external-link" />
+        <Icon class="text-xl " name="pixelarticons:external-link" />
       </a>
     </div>
   </div>
