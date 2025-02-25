@@ -1,43 +1,32 @@
 <script setup lang="ts">
-import Link from '@/components/link.vue'
-
-const packageName = '@koijs/table-vue'
-const packageInfo = ref<{ name?: string, version?: string }>()
-
-async function fetchPackageInfo() {
-  const response = await fetch(`https://registry.npmjs.org/${packageName}`)
-  const data = await response.json()
-  packageInfo.value = {
-    name: data.name,
-    version: data['dist-tags'].latest,
-  }
-}
-onMounted(fetchPackageInfo)
+import { marked } from 'marked'
 
 definePageMeta({
   name: 'home',
 })
+
+const readme = ref<string>('Loading...')
+
+async function getReadme() {
+  try {
+    const response = await fetch('https://raw.githubusercontent.com/protokoi/koijs-table.vue/master/README.md')
+    const data = await response.text()
+    readme.value = data
+  }
+  catch (error) {
+    readme.value = 'README.md yüklenirken hata oluştu.'
+    console.error(error)
+  }
+}
+
+onMounted(getReadme)
 </script>
 
 <template>
   <NuxtLayout>
-    <div class="lg:w-96 md:w-10/12 w-full lg:px-0 md:px-0 relative px-2 flex flex-col h-full justify-start pb-12 items-start">
-      <Header />
-
-      <div class="flex flex-col gap-4 w-full justify-center h-full">
-        <Link
-          v-if="packageInfo"
-          :label="packageInfo.name"
-          :links="{
-            live: `https://table.koijs.com/`,
-            npm: 'https://www.npmjs.com/package/@koijs/table-vue',
-          }"
-          :info="packageInfo.version"
-        />
-        <div v-else>
-          {{ "LOADING..." }}
-        </div>
-      </div>
+    <Header />
+    <div class="overflow-auto py-12">
+      <div v-html="marked(readme)" />
     </div>
   </NuxtLayout>
 </template>

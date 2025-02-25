@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between items-center w-96">
+  <div class="flex justify-between items-center">
     <div class="flex flex-col">
       <p class="text-xl">
         KoiJs
